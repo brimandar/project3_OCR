@@ -11,14 +11,46 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin=""></script>
+    <!-- Chargement MarkerCLuster -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js'></script>
+    <!-- Chargement search bar -->
+    <link rel="stylesheet" href="./leaflet-search-master/src/leaflet-search.css">
+    <link rel="stylesheet" href="./leaflet-search-master/src/leaflet-search.mobile.css">
+    <!-- FIchier CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    <title>Location de vélos à La Rochelle</title>
+    <title>Location de vélos à Nantes</title>
 </head>
 <body>
-    <div id="carte"></div>
+    <header></header>
+    <section class="carrousel"></section>
+    <section class="carteEtInformations">
+        <div id="carte"></div>
+        <aside class="infoStation">
+            <h2>Station<span class="nomStation"></span></h2>
+            <table>
+                <tr>
+                    <td>Statut</td>
+                    <td class="statutDeLaStation celluleDonneesTable"></td>
+                </tr>
+                <tr>
+                    <td>Capacité d'accueil : </td>
+                    <td class="nombreMax celluleDonneesTable"></td>
+                </tr>
+                <tr>
+                    <td>Vélos disponibles : </td>
+                    <td class="nombreVelo celluleDonneesTable"></td>
+                </tr>
+            </table>
+        </aside>
+    </section>
+    
     <div class="test">test</div>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="./js/ajax.js"></script>
-    <script src="./js/bicycle.js"></script>
+    <script src="./js/carte.js"></script>
+    <script src="./js/information.js"></script>
+    <script src="./leaflet-search-master/src/leaflet-search.js"></script>
 </body>
 </html>

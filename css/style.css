@@ -1,3 +1,37 @@
 #carte{
     height: 500px;
+    width: 100%;
+}
+/* Informations à droite de la carte */
+.carteEtInformations{
+    display: flex;
+    margin: 0 1%;
+}
+aside{
+    padding: 1em;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.celluleDonneesTable{
+    text-align: center;
+}
+.infoStation{
+    display:none;
+    margin : 1em;
+    border: 1px #eaeaea solid;
+    box-shadow: 5px 5px 10px 0 #eaeaea;
+}
+h2{
+    text-align: center;
+}
+td{
+    padding: 10px;
+}
+tr:nth-of-type(odd){
+    background-color: #DCDCDC;
+}
+tr{
+    margin-left: 10px;
 }
