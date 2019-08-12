@@ -29,8 +29,8 @@ function recupDonneesDynamiques(data, e){
 }
 // Mise en forme des informations à côté de la carte
 function miseEnFormeInformations(data, e){
-    $(".infoStation").css("display","block");
-    $(".infoStation").css("width", "30%");
+    $(".infoStation").hide().animate({width:'toggle'},300);//Animation pour faire apparaître les infos. Adaptation auto de la largeur. Hide sur reclic.
+    
     if(data[e].status === "OPEN" && data[e].mainStands.availabilities.bikes > 0){
         $(".statutDeLaStation").text("Ouvert");
         $(".statutDeLaStation").css("background-color","#00bdaa");
