@@ -1,10 +1,12 @@
 #carte{
     height: 500px;
     width: 100%;
+    z-index: 1;
 }
 /* Informations à droite de la carte */
 .carteEtInformations{
     display: flex;
+    position: relative;
     margin: 0 1%;
 }
 aside{
@@ -60,4 +62,36 @@ text-shadow:0px 1px 0px #04eacf;
 .monBouton:active {
 	position:relative;
 	top:1px;
+}
+/* Formulaire de réservation */
+.reservation{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    top : 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    z-index: 2;
+}
+.reservation form {
+    display: flex;
+    flex-direction: column;
+}
+.reservation form input {
+    margin-bottom: 15px;
+}
+#nom #prenom {
+    background-color: white;
+}
+#signature{
+    border: 1px solid grey;
+    background-color: ghostwhite;
+}
+.cmdFermerReservation{
+    position: absolute;
+    top:0;
+    right: 25%;
 }
