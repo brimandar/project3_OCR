@@ -1,3 +1,8 @@
+const statutDeLaStationElt =  $(".statutDeLaStation");
+const boutonReservationElt = $(".monBouton");
+const nomStationElt = $(".nomStation");
+const infoStationElt = $(".infoStation");
+
 //Evénement sur click d'un marqueur
 function formulaireClick(marker, data, e) {
     marker.bindPopup(`Adresse : ${data[e].address}`)//pop up sur click
@@ -12,15 +17,15 @@ function formulaireClick(marker, data, e) {
 // Evénement sur click dans la carte : fait disparaitre les informations dans l'aside
 function mapClick(data, e){
     maCarte.on("click", event => {
-        $(".infoStation").css("display","none");
+        infoStationElt.css("display","none");
         $(".carte").css("width","100%");
     })
 }
 //Nom de la station sans son identifiant #XXXXXX pour mettre en titre du formulaire
 function nomDeLaStation(data, e){
     const nom = data[e].name.split("-");
-    $(".nomStation").empty();
-    $(".nomStation").append(` ${nom[1]}`);
+    nomStationElt.empty();
+    nomStationElt.append(` ${nom[1]}`);
 }
 //Données dynamiques
 function recupDonneesDynamiques(data, e){
@@ -29,14 +34,16 @@ function recupDonneesDynamiques(data, e){
 }
 // Mise en forme des informations à côté de la carte
 function miseEnFormeInformations(data, e){
-    $(".infoStation").hide().animate({width:'toggle'},300);//Animation pour faire apparaître les infos. Adaptation auto de la largeur. Hide sur reclic.
+    infoStationElt.hide().animate({width:'toggle'},300);//Animation pour faire apparaître les infos. Adaptation auto de la largeur. Hide sur reclic.
     
     if(data[e].status === "OPEN" && data[e].mainStands.availabilities.bikes > 0){
-        $(".statutDeLaStation").text("Ouvert");
-        $(".statutDeLaStation").css("background-color","#00bdaa");
+        statutDeLaStationElt.text("Ouvert");
+        statutDeLaStationElt.css("background-color","#00bdaa");
+        boutonReservationElt.css("display", "block");
     }
     else if(data[e].status === "CLOSED" || data[e].mainStands.availabilities.bikes === 0){
-        $(".statutDeLaStation").text("Fermé");
-        $(".statutDeLaStation").css("background-color","#f30067");
+        statutDeLaStationElt.text("Fermé");
+        statutDeLaStationElt.css("background-color","#f30067");
+        boutonReservationElt.css("display", "none");
     }
 }

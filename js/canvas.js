@@ -1,20 +1,17 @@
 const canvas = document.querySelector('#signature');
 const boutonEffacer = document.querySelector('#reset');
 const ctx = canvas.getContext('2d');//contexte en 2D
-// canvas.width = window.innerWidth;//largeur adaptée à la fenêtre
-// canvas.height = window.innerHeight;//hauteur adaptée à la fenêtre
 ctx.strokestyle = "#15bfa2";//couleur de la bordure
 ctx.lineJoin = 'round';//détermine la forme à utiliser pour joindre deux segments de ligne à leur intersection - rond
 ctx.lineCap = 'round';//détermine la façon dont les extrémités de chaque ligne sont dessinées - rond
-ctx.lineWidth = 10;//taille du trait du crayon
+ctx.lineWidth = 5;//taille du trait du crayon
 
 let actionDessiner = false;//Par défaut, dessin désactivé
-let lastX = 0;//Position initiales de l'origine
+let lastX = 0;//Position initiales de l'origine (qui sera modifiée dans l'événement)
 let lastY = 0;
 
 function dessiner(e){
-    if(!actionDessiner) return;//Stop la fonction quand la souris si la variable actionDessiner est false (voir événement dessous)
-    console.log(e);
+    if(!actionDessiner) return;//Stop la fonction si la variable actionDessiner est false (voir événement dessous)
     ctx.beginPath();//Crée un nouveau trajet
     //start from
     ctx.moveTo(lastX,lastY);//Déplace le stylo aux coordonnées x et y.
@@ -27,7 +24,7 @@ function dessiner(e){
 //Evénement sur mouvement de la souris
 canvas.addEventListener("mousedown", (e) =>{//déclenché lorsque la souris est pressée sur un élément (comme un bouton)
 actionDessiner = true;
-[lastX, lastY] = [e.offsetX,e.offsetY]//Récupération des dernières coordonnées
+[lastX, lastY] = [e.offsetX,e.offsetY]//Récupération des coordonnées actuelles pour débuter le trait
 });
 canvas.addEventListener("mousemove",dessiner);//se déclenche quand la souris se déplace alors qu'elle est au dessus d'un élément.
 canvas.addEventListener("mouseup", () => actionDessiner = false);//déclenché quand la souris est relâchée au dessus d'un élément. Arret fonction
