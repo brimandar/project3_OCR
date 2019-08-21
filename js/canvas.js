@@ -1,5 +1,5 @@
 const canvas = document.querySelector('#signature');
-const boutonEffacer = document.querySelector('#reset');
+const boutonEffacer = document.querySelector('#resetCanvas');
 const ctx = canvas.getContext('2d');//contexte en 2D
 ctx.strokestyle = "#15bfa2";//couleur de la bordure
 ctx.lineJoin = 'round';//détermine la forme à utiliser pour joindre deux segments de ligne à leur intersection - rond
@@ -33,4 +33,21 @@ canvas.addEventListener("mouseout", () => actionDessiner = false);//déclenché 
 // Clear canvas :
 boutonEffacer.addEventListener('click', function() {
     ctx.clearRect(0,0,canvas.width,canvas.height);
+    //Réinitialisation de la variable lastX et suppr de la signature dans le localstorage si l'utilisateur clic ensuite sur envoyer
+    lastX = 0
+    localStorage.removeItem("signature");
+    testSiCanvasVide();
+
 });
+
+function testSiCanvasVide(){//Fonction pour tester si le canvas est vide (dessin et localStorage)
+    let testLastX = 0
+    let testLocalStorageSignature = 0
+    if (localCanvas != null){
+      testLocalStorageSignature = 1
+    }
+    if (lastX != 0){
+      testLastX = 1
+    }
+    testCanvas = testLastX + testLocalStorageSignature
+  }
