@@ -1,0 +1,84 @@
+/* Formulaire de réservation */
+#reservation{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    top : 0;
+    left: 20%;
+    height: 100%;
+    width: 30%;
+    border: 1px solid gray;
+    padding: 0 15px;
+    z-index: 2;
+}
+#reservationHeader {
+    width: 100%;
+    height: 20px;
+    cursor: move;
+    z-index: 3;
+}
+#reservationHeader:hover{
+    background: whitesmoke;
+}
+.formReservation {
+    display: flex;
+    flex-direction: column;
+}
+.formReservation input {
+    margin: 15px 0;
+}
+.cmdSignature{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+}
+#nom, #prenom {
+    text-decoration: none;
+    background-color: white;
+    width: 300px;
+}
+#signature{
+    border: 1px solid grey;
+    background-color: ghostwhite;
+}
+.cmdFermerReservation{
+    position: absolute;
+    font-size: 20px;
+    top:0;
+    right: 0;
+    z-index: 4;
+}
+.cmdFermerReservation:hover{
+    background: red;
+    color: white;
+}
+.confirmationReservation{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    height: 1px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+    margin: 15px 0;
+}
+
+@media (max-width: 680px){
+    #reservation{
+        left: 0;
+        width: 90%;
+        z-index: 2;
+    }
+    #nom, #prenom {
+        text-decoration: none;
+        background-color: white;
+        width: 100%;
+    }
+    #signature{
+        width: 100%;
+    }
+}
