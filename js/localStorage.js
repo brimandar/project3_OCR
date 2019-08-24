@@ -3,7 +3,6 @@ const prenomReservationElt = document.getElementById('prenom');
 const localNom = localStorage.getItem('nom');
 const localPrenom = localStorage.getItem('prenom');
 const localCanvas = sessionStorage.getItem('signature');
-const localStation = sessionStorage.getItem('nomStation');
 let testCanvas = 0
 
 // Au chargement, on lance la fonction de récupération des données de localstorage uniquement si le champ nom n'est pas vide

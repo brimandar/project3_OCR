@@ -2,7 +2,6 @@ const reservationElt = $("#reservation");
 const carteElt = $("#carte");
 const informationElt = $(".infoStation");
 const confirmationStationElt = $(".confirmationStation");
-let stationEnregistree = "";
 
 
 boutonReservationElt.on("click", event => {
@@ -29,11 +28,10 @@ function fermerFormulaireReservation() {
 }
 
 function enregistrerReservation() {
-    stationEnregistree = nomStationElt[0].textContent;
     ajoutLocalStorage();
     fermerFormulaireReservation();
     finMinuteur();
-    $(".dureeMinSec").html("00:10");
+    $(".dureeMinSec").html("02:00");
     minuteur();
     confirmationStationElt.text(nomStationElt[0].textContent);
     afficherMessageConfirmation();
@@ -53,7 +51,6 @@ function supprReservation(){
     finMinuteur();
     dureeMinSecElt.html("00:00");
     sessionStorage.clear();
-    document.location.reload(true);//Rechargement de la page 
 }
 
 $(".formReservation").submit(function (e) {
@@ -63,12 +60,12 @@ $(".formReservation").submit(function (e) {
         alert("Veuillez compléter tous les champs");
         return false;
     }
-    if (stationEnregistree === "") {
+    if (sessionStorage.nomStation === undefined) {
         enregistrerReservation();
         return false;
     }
-    if (stationEnregistree != nomStationElt[0].textContent) {
-        let messageConfirmation = confirm(`il existe déjà une réservation pour la station${stationEnregistree}. Voulez-vous la remplacer ?`)
+    if (sessionStorage.nomStation != nomStationElt[0].textContent) {
+        let messageConfirmation = confirm(`il existe déjà une réservation pour la station${sessionStorage.nomStation}. Voulez-vous la remplacer ?`)
         if (messageConfirmation === true) {
             enregistrerReservation();
             return false;
@@ -76,7 +73,7 @@ $(".formReservation").submit(function (e) {
             return false;
         }
     }
-    if (stationEnregistree === nomStationElt[0].textContent) {
+    if (sessionStorage.nomStation === nomStationElt[0].textContent) {
         let messageConfirmation = confirm(`"Une réservation est déjà effectuée à cette station !". Voulez-vous la modifier ?`)
         if (messageConfirmation === true) {
             enregistrerReservation();
