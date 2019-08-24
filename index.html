@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+    <!-- Lien Fontawesome pour icone personnalisé -->
+    <script src="https://kit.fontawesome.com/bce8be748c.js"></script>
     <!-- Chargement CDN Leaflet le fichier CSS puis le script -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-    crossorigin=""></script>
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
     <!-- Chargement MarkerCLuster -->
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    <script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js'></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js'>
+    </script>
     <!-- Chargement search bar -->
     <link rel="stylesheet" href="./leaflet-search-master/src/leaflet-search.css">
     <link rel="stylesheet" href="./leaflet-search-master/src/leaflet-search.mobile.css">
-    <!-- API canvas -->
-    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>">
-    <!-- FIchier CSS -->
+    <!-- Fichiers CSS -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reservation.css">
+    <link rel="stylesheet" href="./css/slider.css">
     <title>Location de vélos à Nantes</title>
 </head>
+
 <body>
-    <header></header>
-    <section class="carrousel"></section>
+    <header>
+        <div>
+            <h1>Découvrez Nantes et la Loire sur nos vélos...<br/>à votre rythme !</h1>
+            <i class="fas fa-biking"></i>
+            <p>Nous fournissons des vélos de qualité pour découvrir Nantes à travers ses 470Km de pistes cyclabes.</p>
+        </div>
+        <video controls autoplay preload="auto" src="./img/loire.mp4"></video>
+    </header>
+    <section id="slider">
+            <a href="#" class="control_next"></a>
+            <a href="#" class="control_prev"></a>
+            <ul>
+                <li>SLIDE 1</li>
+                <li>SLIDE 2</li>
+                <li>SLIDE 3</li>
+                <li>SLIDE 4</li>
+            </ul>
+    </section>
     <section class="carteEtInformations">
         <div id="carte"></div>
         <aside class="infoStation">
@@ -47,7 +71,7 @@
                 </tr>
             </table>
             <div class="boutonReserver">
-                    <a href="#" class="monBouton">Réserver</a>
+                <a href="#" class="monBouton">Réserver</a>
             </div>
         </aside>
         <div id="reservation">
@@ -70,19 +94,20 @@
             <i class="cmdFermerReservation far fa-times-circle"></i>
         </div>
     </section>
-    
-    
+
+
     <div class="confirmationReservation">
         <p>Votre vélo a été réservé à la Station :
-        <span class="confirmationStation"></span><br/> 
-        Pour une durée de : 
-        <span class="dureeMinSec">02:00</span></p> 
+            <span class="confirmationStation"></span><br />
+            Pour une durée de :
+            <span class="dureeMinSec">02:00</span></p>
         <button type="button" class="annulerReservation">Annuler</button>
     </div>
-    
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="./js/ajax.js"></script>
+    <script src="./js/slider.js"></script>
     <script src="./js/carte.js"></script>
     <script src="./js/information.js"></script>
     <script src="./js/minuteur.js"></script>
@@ -92,4 +117,5 @@
     <script src="./js/localStorage.js"></script>
     <script src="./leaflet-search-master/src/leaflet-search.js"></script>
 </body>
+
 </html>
