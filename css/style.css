@@ -2,7 +2,10 @@
     font-family: 'bukhari';
     src: url('../font/Bukhari.ttf');
 }
-
+body{
+    background-color: #FBF4E6;
+    font-family: 'Montserrat', sans-serif;
+}
 header{
     position: relative;
     text-align: center;
