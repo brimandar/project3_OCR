@@ -35,7 +35,7 @@ boutonEffacer.addEventListener('click', function() {
     ctx.clearRect(0,0,canvas.width,canvas.height);
     //Réinitialisation de la variable lastX et suppr de la signature dans le localstorage si l'utilisateur clic ensuite sur envoyer
     lastX = 0
-    localStorage.removeItem("signature");
+    sessionStorage.removeItem("signature");
     testSiCanvasVide();
 
 });

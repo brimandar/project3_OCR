@@ -51,6 +51,8 @@ function supprReservation(){
     finMinuteur();
     dureeMinSecElt.html("00:00");
     sessionStorage.clear();
+    ctx.clearRect(0,0,canvas.width,canvas.height);//cf canvas.js
+    lastX = 0//cf canvas.js
 }
 
 $(".formReservation").submit(function (e) {
@@ -86,8 +88,10 @@ $(".formReservation").submit(function (e) {
 
 $(".annulerReservation").on('click', event => {
 
-    $(".confirmationReservation").slideUp(500, function(){
-        supprReservation();
+    $(".confirmationReservation").animate({
+        height: "1px",
+        opacity: "0"
     });
+    supprReservation();
     
 });

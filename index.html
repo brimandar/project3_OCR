@@ -43,11 +43,19 @@
         </div>
         <video controls autoplay preload="auto" src="./img/loire.mp4"></video>
     </header>
-    <div class="carousel">
-        <div class="carousel1"></div>
-        <div class="carousel2"></div>
-        <div class="carousel3"></div>
-        <div class="carousel4"></div>
+    <div id="carousel">
+        <div class="carousel1">
+            <img src="./img/slider_1.png" alt="1ère diapositive présentant la réservation d'un vélo">
+        </div>
+        <div class="carousel2">
+            <img src="./img/slider_2.png" alt="2dn diapositive expliquant la sélection d'un site de location sur la carte">
+        </div>
+        <div class="carousel3">
+            <img src="./img/slider_3.png" alt="3ième diapositive expliquant les champs à remplir pour confirmer une réservation">
+        </div>
+        <div class="carousel4">
+            <img src="./img/slider_4.png" alt="4ième diapositive expliquant la confirmation de réservation">
+        </div>
     </div>
     <section class="carteEtInformations">
         <div id="carte"></div>
@@ -68,7 +76,7 @@
                 </tr>
             </table>
             <div class="boutonReserver">
-                <a href="#" class="monBouton">Réserver</a>
+                <button class="monBouton">Réserver</button>
             </div>
         </aside>
         <div id="reservation">
@@ -103,8 +111,8 @@
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="./js/ajax.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/ajax.js"></script>
     <script src="./js/carte.js"></script>
     <script src="./js/information.js"></script>
     <script src="./js/minuteur.js"></script>

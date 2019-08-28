@@ -1,0 +1,56 @@
+.carousel{
+    margin: 30px 0;
+}
+
+.slider{
+    position: relative;
+    overflow: hidden;
+}
+
+.sliderItem{
+    float: left;
+}
+
+.sliderContainer{
+    transition: transform 0.3s;
+}
+
+.sliderContainer::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.slider img{
+    width: 100%;
+}
+
+.carouselNext, .carouselPrev{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background-size: 20px;
+    border-radius: 50%;
+    top:50%;
+    margin-top: -20px;
+    right: -20px;
+    box-shadow: 0 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.carouselNext:hover, .carouselPrev:hover{
+    transform: scale(1.2)
+}
+
+.carouselPrev{
+    background-color: aqua;
+    right: auto;
+    left: -20px;
+}
+@media (min-width: 1000px){
+    .sliderContainer{
+        height: 600px;
+    }
+}
