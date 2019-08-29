@@ -38,9 +38,6 @@ function enregistrerReservation() {
 }
 
 function afficherMessageConfirmation() {
-    // $(".confirmationReservation").slideToggle( 500, function(){
-    //     $(this).css("display", "flex");
-    // });
     $(".confirmationReservation").animate({
         height: "100px",
         opacity: "1"

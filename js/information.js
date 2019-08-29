@@ -3,8 +3,10 @@ const boutonReservationElt = $(".monBouton");
 const nomStationElt = $(".nomStation");
 const infoStationElt = $(".infoStation");
 
-//Evénement sur click d'un marqueur
-function formulaireClick(marker, data, e) {
+/**
+ * Evénement sur click d'un marqueur
+ */
+function clickMarker(marker, data, e) {
     marker.bindPopup(`Adresse : ${data[e].address}`)//pop up sur click
     markerClusters.addLayer(marker); // Ajout groupe marqueurs
     maCarte.addLayer(markerClusters);
@@ -14,14 +16,18 @@ function formulaireClick(marker, data, e) {
         miseEnFormeInformations(data, e);
     })
 };
-// Evénement sur click dans la carte : fait disparaitre les informations dans l'aside
+/**
+ * Evénement sur click dans la carte : fait disparaitre les informations dans l'aside
+ */
 function mapClick(data, e){
     maCarte.on("click", event => {
         infoStationElt.css("display","none");
         $(".carte").css("width","100%");
     })
 }
-//Nom de la station sans son identifiant #XXXXXX pour mettre en titre du formulaire
+/**
+ * Nom de la station sans son identifiant #XXXXXX pour mettre en titre du formulaire
+ */
 function nomDeLaStation(data, e){
     const nom = data[e].name.split("-");
     nomStationElt.empty();

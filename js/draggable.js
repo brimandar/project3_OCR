@@ -1,13 +1,13 @@
-//Code pour rendre déplaçable (draggable) le formulaire de réservation
 dragElement(document.getElementById("reservation"));
-
+/**
+ * Code pour rendre déplaçable (draggable) le formulaire de réservation
+ */
 function dragElement(elmnt) {
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     // Déplacement si clic souris sur la div reservationHeader
     document.getElementById(elmnt.id + "Header").onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
-      console.log(e);
     e = e || window.event;//Evenement différent de la fenetre
     e.preventDefault();
     // Position de la souris initiale lors du clic:

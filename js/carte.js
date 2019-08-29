@@ -38,13 +38,23 @@ function initMap(ville) {
             if(data[e].contractName === ville){//Si la station est dans la ville sélectionnée
                 if(data[e].status === "CLOSED" || data[e].mainStands.availabilities.bikes === 0){
                     let marker = L.marker([latitudeMarker, longitudeMarker],{icon: L.icon(myIconRouge)});//Ajout marqueur 
-                    formulaireClick(marker, data, e);
+                    clickMarker(marker, data, e);
                 }else if(data[e].status === "OPEN" && data[e].mainStands.availabilities.bikes > 0){
                     let marker = L.marker([latitudeMarker, longitudeMarker],{icon: L.icon(myIconVert)});//Ajout marqueur
-                    formulaireClick(marker, data, e);
+                    clickMarker(marker, data, e);
                 }
             }
             mapClick(data,e);
+            //Gestion du scroll sur la carte pour éviter de perturber la navigation sur la page
+            maCarte.scrollWheelZoom.disable(); 
+                maCarte.on('click', function() { 
+                    if (maCarte.scrollWheelZoom.enabled()) { 
+                        maCarte.scrollWheelZoom.disable(); 
+                    } 
+                    else { 
+                        maCarte.scrollWheelZoom.enable(); 
+                    } 
+                })
         });
     });
 }
