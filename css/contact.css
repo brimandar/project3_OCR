@@ -1,0 +1,16 @@
+#contact{
+    position: relative;
+}
+
+#contact address {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#contact > div > div:first-child p {
+    font-weight: bold;
+    text-align: end;
+}

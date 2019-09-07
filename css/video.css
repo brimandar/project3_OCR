@@ -1,0 +1,62 @@
+#sectionVideo{
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+#sectionVideo div{
+    position : absolute;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+    top: 200px;
+    left:0;
+    width: 100%;
+}
+
+#sectionVideo h2{
+    font-family: 'bukhari', Georgia, "Times New Roman", Times, serif;
+}
+
+header .fa-biking{
+font-size: 30px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 300px) {
+    #sectionVideo div{
+        font-size: 1em;
+    }
+    #sectionVideo h2{
+        font-size: 1rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #sectionVideo div{
+        font-size: 1.2em;
+    }
+    #sectionVideo h2{
+        font-size: 1.5rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #sectionVideo div{
+        font-size: 1.2em;
+    }
+    #sectionVideo h2{
+        font-size: 2rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #sectionVideo div{
+        font-size: 1.5em;
+    }
+    #sectionVideo h2{
+        font-size: 3rem;
+    }
+}
