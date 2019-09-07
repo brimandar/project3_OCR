@@ -11,12 +11,12 @@ if(localStorage.getItem('nom')) {
   recupDataCanvas(localCanvas,canvas)//Canvas
 }
 
-function recupDataCanvas(strDataURI, canvas) {//Récupération du canvas dans localStorage
+function recupDataCanvas(strDataURI, canvas) {//Récupération du canvas dans sessionStorage
   const img = new window.Image();
   img.addEventListener("load", function () {
       canvas.getContext("2d").drawImage(img, 0, 0);
   });
-  img.setAttribute("src", strDataURI);//La source de l'image est le DataURL stocké dans le localStorage
+  img.setAttribute("src", strDataURI);//La source de l'image est le DataURL stocké dans le sessionStorage
 }
 
 function ajoutLocalStorage() {

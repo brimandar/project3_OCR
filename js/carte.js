@@ -16,6 +16,7 @@ class iconPerso {
 }
 const myIconRouge = new iconPerso("./img/iconBicycleRed.png");
 const myIconVert = new iconPerso("./img/iconBicycleGreen.png");
+const myIconOrange = new iconPerso("./img/iconBicycleOrange.png");
 
 // Fonction d'initialisation de la carte
 function initMap(ville) {
@@ -34,27 +35,25 @@ function initMap(ville) {
         $.each( data, e => {//Boucle sur chaque station de l'API
         let latitudeMarker = data[e].position.latitude;
         let longitudeMarker = data[e].position.longitude;
+        let nbVeloTotal = data[e].mainStands.capacity;
+        let nbVeloDisponible = data[e].mainStands.availabilities.bikes;
+        let ratioVeloDisponible = nbVeloDisponible / nbVeloTotal;
 
             if(data[e].contractName === ville){//Si la station est dans la ville sélectionnée
-                if(data[e].status === "CLOSED" || data[e].mainStands.availabilities.bikes === 0){
+                if(data[e].status === "CLOSED" || nbVeloDisponible === 0){
                     let marker = L.marker([latitudeMarker, longitudeMarker],{icon: L.icon(myIconRouge)});//Ajout marqueur 
                     clickMarker(marker, data, e);
-                }else if(data[e].status === "OPEN" && data[e].mainStands.availabilities.bikes > 0){
+                } else if(data[e].status === "OPEN" && nbVeloDisponible > 0 && ratioVeloDisponible > 0.5){
                     let marker = L.marker([latitudeMarker, longitudeMarker],{icon: L.icon(myIconVert)});//Ajout marqueur
+                    clickMarker(marker, data, e);
+                } else if(data[e].status === "OPEN" && nbVeloDisponible > 0 && ratioVeloDisponible < 0.5){
+                    let marker = L.marker([latitudeMarker, longitudeMarker],{icon: L.icon(myIconOrange)});//Ajout marqueur
                     clickMarker(marker, data, e);
                 }
             }
             mapClick(data,e);
             //Gestion du scroll sur la carte pour éviter de perturber la navigation sur la page
             maCarte.scrollWheelZoom.disable(); 
-                maCarte.on('click', function() { 
-                    if (maCarte.scrollWheelZoom.enabled()) { 
-                        maCarte.scrollWheelZoom.disable(); 
-                    } 
-                    else { 
-                        maCarte.scrollWheelZoom.enable(); 
-                    } 
-                })
         });
     });
 }
@@ -62,3 +61,14 @@ function initMap(ville) {
 window.onload = function(){
     initMap("nantes"); 
 };
+
+$("#carte").on('click', function() { 
+    if (document.querySelector('#reservation').style.display !== 'flex'){
+        if (maCarte.scrollWheelZoom.enabled()) { 
+            maCarte.scrollWheelZoom.disable(); 
+        } 
+        else { 
+            maCarte.scrollWheelZoom.enable(); 
+        } 
+    }
+})

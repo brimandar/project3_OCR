@@ -2,112 +2,61 @@
     font-family: 'bukhari';
     src: url('../font/Bukhari.ttf');
 }
+.row{
+    margin-left:0!important;
+    margin-right: 0!important;
+}
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+
 body{
-    background-color: #FBF4E6;
     font-family: 'Montserrat', sans-serif;
 }
-header{
-    position: relative;
-    text-align: center;
-    color: #fff;
-    background-color: #060727;
-    overflow: hidden;
-    width: 100%;
-    height: 500px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-}
-header div{
-    position : absolute;
-    top: 20px;
-    left:0;
-    width: 100%;
-}
+
 h1{
-    font-family: 'bukhari', Georgia, "Times New Roman", Times, serif;
-    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
 }
-video{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-header .fa-biking{
-font-size: 30px;
-}
-
-
-#carte{
+#titre{
     position: relative;
-    height: 500px;
-    width: 100%;
-    z-index: 1;
 }
-
-.carteEtInformations{
-    display: flex;
-    position: relative;
-    margin: 0 1%;
-}
-.carteEtInformations p{
+#titre p{
     position: absolute;
-    bottom:-2%;
-    left: 0;
-    background-color: rgb(255, 255, 255,0.8);
-    font-size: x-small;
-    z-index: 3;
+    right: 5%;
+    width: 35%;
+
 }
-aside{
-    padding: 1em;
+
+header, section{
+margin-bottom: 2vw;
 }
-h2{
-    text-align: center;
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 300px) {
+    #titre p{
+        font-size: 12px;
+        bottom: 0;
+    }
 }
-table{
-    border-collapse: collapse;
-    width: 100%;
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #titre p{
+        font-size: 14px;
+        bottom: 0;
+    }
 }
-.celluleDonneesTable{
-    text-align: center;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #titre p{
+        font-size: 20px;
+        bottom: 10%;
+    }
 }
-.infoStation{
-    display:none;
-    border: 1px #eaeaea solid;
-    box-shadow: 5px 5px 10px 0 #eaeaea;
-}
-.statutDeLaStation{
-    color:white;
-    font-weight:bold;
-}
-td{
-    padding: 10px;
-}
-tr:nth-of-type(odd){
-    background-color: #DCDCDC;
-}
-tr{
-    margin-left: 10px;
-}
-.boutonReserver{
-display: flex;
-justify-content: center;
-margin: 2em;
-}
-.monBouton{
-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
-background-color:#00bdaa;
-border-radius:6px;
-color:#ffffff;
-font-size:15px;
-font-weight:bold;
-padding:6px 24px;
-text-decoration:none;
-text-shadow:0px 1px 0px #04eacf;
-}
-.monBouton:hover {
-	background-color:#137566;
-}
-.monBouton:active {
-	position:relative;
-	top:1px;
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #titre p{
+        font-size: 25px;
+        bottom: 10%;
+    }
 }

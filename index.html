@@ -3,9 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="./img/favicon_cycle.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
     <!-- Lien Fontawesome pour icone personnalisé -->
@@ -29,99 +32,328 @@
     <link rel="stylesheet" href="./leaflet-search-master/src/leaflet-search.mobile.css">
     <!-- Fichiers CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reservation.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/video.css">
     <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/carte.css">
+    <link rel="stylesheet" href="./css/reservation.css">
+    <link rel="stylesheet" href="./css/contact.css">
     <title>Location de vélos à Nantes</title>
 </head>
 
 <body>
-    <header>
-        <div>
-            <h1>Découvrez Nantes et la Loire sur nos vélos...<br/>à votre rythme !</h1>
-            <i class="fas fa-biking"></i>
-            <p>Nous fournissons des vélos de qualité pour découvrir Nantes à travers ses 470Km de pistes cyclabes.</p>
-        </div>
-        <video controls autoplay preload="auto" src="./img/loire.mp4"></video>
-    </header>
-    <div id="carousel">
-        <div class="carousel1">
-            <img src="./img/slider_1.png" alt="1ère diapositive présentant la réservation d'un vélo">
-        </div>
-        <div class="carousel2">
-            <img src="./img/slider_2.png" alt="2dn diapositive expliquant la sélection d'un site de location sur la carte">
-        </div>
-        <div class="carousel3">
-            <img src="./img/slider_3.png" alt="3ième diapositive expliquant les champs à remplir pour confirmer une réservation">
-        </div>
-        <div class="carousel4">
-            <img src="./img/slider_4.png" alt="4ième diapositive expliquant la confirmation de réservation">
-        </div>
-    </div>
-    <section class="carteEtInformations">
-        <p>Cliquer dans la carte pour activer / désactiver le zoom avec la molette de votre souris</p>
-        <div id="carte"></div>
-        <aside class="infoStation">
-            <h2>Station<span class="nomStation"></span></h2>
-            <table>
-                <tr>
-                    <td>Statut</td>
-                    <td class="statutDeLaStation celluleDonneesTable"></td>
-                </tr>
-                <tr>
-                    <td>Capacité d'accueil : </td>
-                    <td class="nombreMax celluleDonneesTable"></td>
-                </tr>
-                <tr>
-                    <td>Vélos disponibles : </td>
-                    <td class="nombreVelo celluleDonneesTable"></td>
-                </tr>
-            </table>
-            <div class="boutonReserver">
-                <button class="monBouton">Réserver</button>
+    <div class="container">
+        <header class="row sticky-top">
+            <nav class="col-sm-10 col-md-11 navbar navbar-expand-lg navbar-light bg-light">
+                <img src="./img/bicycleNavigation.png" width="45" height="30" alt="Icone de vélo Nantais">
+                <a id="linkLogo" class="navbar-brand" href="#">V'lo Nantais</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a id="linkPresentation" class="nav-link" href="#presentation">Présentation <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="linkCarousel" class="nav-link" href="#sectionCarousel">Mode d'emploi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="linkCarte" class="nav-link" href="#carteEtInformations">Réserver</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="linkContact" class="nav-link" href="#contact">Nous contacter</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sites partenaires
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://www.nantes-tourisme.com/fr">Office de tourisme de
+                                    Nantes</a>
+                                <a class="dropdown-item"
+                                    href="https://www.francevelotourisme.com/itineraire/nantes-velo-tourisme">France
+                                    vélo tourisme</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="https://www.ffc.fr/">Fédération Française de Cyclisme</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="col-sm-2 col-md-1 bg-light d-flex align-items-center">
+                <a class="" href="https://twitter.com/nantesavelo?lang=fr" title="Twitter Nantes à vélo"><i
+                        class="fab fa-twitter"></i></a>
+                <a class="" href="https://www.instagram.com/nantesfr/?hl=fr" title="Instagram de la ville de Nantes"><i
+                        class="fab fa-instagram"></i></a>
             </div>
-        </aside>
-        <div id="reservation">
-            <div id="reservationHeader"></div>
-            <h2>Formulaire de réservation</h2>
-            <form class="formReservation">
-                <label for="nom">Nom : </label>
-                <input type="text" name="nom" id="nom">
-                <label for="prenom">Prénom :</label>
-                <input type="text" name="prenom" id="prenom">
-                <div>
-                    <canvas id="signature"></canvas>
-                    <div class="cmdSignature">
-                        <p>Signez ci-dessus</p>
-                        <button type="button" id="resetCanvas" class="button">Effacer</button>
+        </header>
+        <section id="titre" class="row">
+            <h1>Location de vélos à Nantes</h1>
+            <img src="./img/nantes-velo.jpg" class="img-fluid" alt="Responsive image">
+            <p>Avec notre large choix de vélos tout confort, découvrez Nantes autrement.</p>
+        </section>
+        <section id="presentation" class="row">
+            <h3 class="row h3">Déterminons ensemble votre besoin !</h3>
+            <p class="row text-justify">Vous souhaitez vous balader une heure dans Nantes ou bien partir plusieurs jours sur
+                les bords de Loire à la découverte des châteaux ?<br />
+                Nous déterminerons ensemble le vélo adapté à votre parcours et à votre niveau.</p><br />
+            <p class="row">Voici un rapide aperçu de nos vélos :</p>
+            <div class="col-lg-12 accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Le vélo Tout Chemin (VTC)
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body d-flex flex-column">
+                            <img class="mx-auto" src="./img/velo-vtc.jpeg" alt="Vélo tout chemin">
+                            <p class="text-justify">Vélo confortable aussi bien à l'aise sur route que sur chemin
+                                aménagé.
+                                Il permet des balades tout confort avec une selle en gel et peut être équipé de bagages.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <input type="submit" value="Envoyer">
-            </form>
-            <i class="cmdFermerReservation far fa-times-circle"></i>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Le vélo de voyage
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body d-flex flex-column">
+                            <img class="mx-auto" src="./img/velo-de-voyage.jpeg" alt="Vélo de voyage">
+                            <p class="text-justify">Il est composé et fabriqué spécifiquement pour effectuer des voyages
+                                en itinérance
+                                de plusieurs jours à plusieurs mois !<br />
+                                Selon les pneus et la configuration choisie, le vélo de voyage permet de traverser
+                                confortablement de longues distances asphaltées
+                                mais aussi d'effectuer des trajets sur pistes ou sentiers lorsque cela s'impose.<br />
+                                Le vélo par excellence pour découvrir les magnifiques paysages de la Loire...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Le tandem
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        data-parent="#accordionExample">
+                        <div class="card-body d-flex flex-column">
+                            <img class="mx-auto" src="./img/tandem-velo-voyage.jpeg" alt="Vélo en tandem">
+                            <p class="text-justify">Le tandem est un vélo pour deux personnes sur lequel vous pédalerez
+                                de concert.
+                                Il est de plus en plus utilisé pour les voyages en duo, notamment pour son aspect
+                                ludique et
+                                la proximité qu’il instaure entre les deux cyclistes. Une remorque pour les enfants peut
+                                même y être ajouté.
+                            </p>
+                            <div class="alert alert-danger" role="alert">
+                                Le tandem nécessite un temps d’adaptation et donc un essai préalable afin de définir si
+                                l’on s’y sent bien !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Le Vélo à Assistance Electrique
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                        data-parent="#accordionExample">
+                        <div class="card-body d-flex flex-column">
+                            <img class="mx-auto" src="./img/velo-a-assitance-electrique-voyage.jpeg" alt="Vélo à assistance électrique">
+                            <p class="text-justify">L’assistance électrique permet de rendre certains terrains (en côte)
+                                plus accessibles,
+                                de pouvoir palier à un souci moteur ou à un léger handicap, de pouvoir supporter un
+                                poids élevé (remorque avec enfant, nombreux bagages)
+                                ou simplement de pédaler plus légèrement !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="videoSection" class="row">
+            <h3 class="h3">Les attraits de Nantes à vélo</h3>
+            <p>Nantes est le point de départ idéal pour des randonnées à vélo le temps d’une journée.
+                En solo ou en famille, en cœur de ville ou pour des escapades alentours :
+                Nantes recèle 1001 atouts pour une balade à vélo.
+                Tout est pensé pour profiter pleinement de la beauté du territoire ligérien et découvrir
+                ses nombreuses pépites !
+            </p>
+            <div>
+                <h2>Découvrez Nantes et la Loire sur nos vélos...<br />à votre rythme !</h2>
+                <i class="fas fa-biking"></i>
+                <p>Nous fournissons des vélos de qualité pour découvrir Nantes à travers ses 470Km de pistes cyclabes.
+                </p>
+            </div>
+            <video class="row" controls autoplay loop preload="auto" src="./img/loire.mp4" alt="Vidéo de présentation des chemins à vélos autour de la Loire."></video>
+        </section>
+        <section id="sectionCarousel" class="row">
+            <h3 class="row h3">Réserver un vélo en ligne</h3>
+            <div class="row" id="carousel">
+                <div class="row carousel1">
+                    <div class="col-md-6">
+                        <img src="./img/slider_1.png" alt="1ère diapositive présentant la réservation d'un vélo">
+                    </div>
+                    <div class="col-md-5">
+                        <h3>1 - Choisir votre station</h3>
+                        <p><img class="iconeSlide" src="./img/iconBicycleGreen.png"><span class="badge badge-success"> Vert</span> : vélos disponibles</p><br>
+                        <p><img class="iconeSlide" src="./img/iconBicycleOrange.png"><span class="badge badge-warning"> Orange</span> : vélos disponibles mais quantité limitée (moins de 50%)</p><br>
+                        <p><img class="iconeSlide" src="./img/iconBicycleRed.png"><span class="badge badge-danger"> Rouge</span> : station fermée</p>
+                        <p class="shadow-sm p-3 mb-5 bg-white rounded">Astuce : cliquer dans la carte pour activer le zoom à la molette (et inversement)</p>
+                    </div>
+                    
+
+                </div>
+                <div class="carousel2">
+                    <img src="./img/slider_2.png"
+                        alt="2dn diapositive expliquant la sélection d'un site de location sur la carte">
+                </div>
+                <div class="carousel3">
+                    <img src="./img/slider_3.png"
+                        alt="3ième diapositive expliquant les champs à remplir pour confirmer une réservation">
+                </div>
+                <div class="carousel4">
+                    <img src="./img/slider_4.png" alt="4ième diapositive expliquant la confirmation de réservation">
+                </div>
+            </div>
+        </section>
+        <section id="carteEtInformations" class="row">
+            <p>Cliquer dans la carte pour activer / désactiver le zoom avec la molette de votre souris</p>
+            <div id="carte"></div>
+            <aside class="infoStation">
+                <h2>Station<span class="nomStation"></span></h2>
+                <table>
+                    <tr>
+                        <td>Statut</td>
+                        <td class="statutDeLaStation celluleDonneesTable"></td>
+                    </tr>
+                    <tr>
+                        <td>Capacité d'accueil : </td>
+                        <td class="nombreMax celluleDonneesTable"></td>
+                    </tr>
+                    <tr>
+                        <td>Vélos disponibles : </td>
+                        <td class="nombreVelo celluleDonneesTable"></td>
+                    </tr>
+                </table>
+                <div class="boutonReserver">
+                    <button class="monBouton">Réserver</button>
+                </div>
+            </aside>
+            <div id="reservation">
+                <div id="reservationHeader">Déplacer le formulaire</div>
+                <h2 class="alert alert-primary">Formulaire de réservation</h2>
+                <form class="formReservation">
+                    <label for="nom">Nom : </label>
+                    <input type="text" name="nom" id="nom">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" name="prenom" id="prenom">
+                    <div>
+                        <canvas id="signature"></canvas>
+                        <div class="cmdSignature">
+                            <p>Signez ci-dessus</p>
+                            <button type="button" id="resetCanvas" class="btn btn-warning btn-sm">Effacer</button>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Envoyer">
+                </form>
+                <i class="cmdFermerReservation far fa-times-circle"></i>
+            </div>
+        </section>
+        <div class="row alert alert-success confirmationReservation">
+            <p>Votre vélo a été réservé à la Station :
+                <span class="confirmationStation"></span><br />
+                Pour une durée de :
+                <span class="dureeMinSec">02:00</span></p>
+            <button type="button" class="annulerReservation btn btn-outline-danger">Annuler</button>
         </div>
-    </section>
+        <section class="row" id="contact">
+            <h3 class="row">Nous contacter</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="./img/homme-velo.gif" class="img-fluid" alt="Responsive image">
+                    <address>
+                        V'lo nantes<br />
+                        17, rue d'Angleterre<br />
+                        44000 NANTES<br />
+                        tél : 01-02-03-04-05<br />
+                        mail : vlo.nature@orange.fr
+                    </address>
+                    <p>Promis, nous répondons dans les 48 heures !</p>
+                </div>
+                <form class="col-lg-6">
+                    <p>Formualire de contact</p>
+                    <div class="row form-group">
+                        <div class="col">
+                            <label for="Prénom">Prénom</label>
+                            <input type="text" class="form-control" id="prenom" placeholder="Prénom">
+                        </div>
+                        <div class="col">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Nom">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Votre adresse mail</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Votre email">
+                        <small id="emailHelp" class="form-text text-muted">Votre email ne sera jamais utilisé à des fins
+                            commerciales.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="commentaire">Votre message</label>
+                        <textarea class="form-control" rows="5" id="commentaire" placeholder="Commentaire"></textarea>
+                    </div>
+                    <button type="submit" class="float-right btn btn-primary">Envoyer</button>
+                </form>
+            </div>
 
+        </section>
 
-    <div class="confirmationReservation">
-        <p>Votre vélo a été réservé à la Station :
-            <span class="confirmationStation"></span><br />
-            Pour une durée de :
-            <span class="dureeMinSec">02:00</span></p>
-        <button type="button" class="annulerReservation">Annuler</button>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="./js/slider.js"></script>
+        <script src="./js/scrolling.js"></script>
+        <script src="./js/ajax.js"></script>
+        <script src="./js/carte.js"></script>
+        <script src="./js/information.js"></script>
+        <script src="./js/minuteur.js"></script>
+        <script src="./js/reservation.js"></script>
+        <script src="./js/canvas.js"></script>
+        <script src="./js/draggable.js"></script>
+        <script src="./js/localStorage.js"></script>
+        <script src="./leaflet-search-master/src/leaflet-search.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="./js/slider.js"></script>
-    <script src="./js/ajax.js"></script>
-    <script src="./js/carte.js"></script>
-    <script src="./js/information.js"></script>
-    <script src="./js/minuteur.js"></script>
-    <script src="./js/reservation.js"></script>
-    <script src="./js/canvas.js"></script>
-    <script src="./js/draggable.js"></script>
-    <script src="./js/localStorage.js"></script>
-    <script src="./leaflet-search-master/src/leaflet-search.js"></script>
 </body>
 
 </html>
