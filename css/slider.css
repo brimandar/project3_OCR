@@ -1,12 +1,11 @@
 /* General */
-#sectionCarousel{
-    border: 1px solid gray;
+#carousel{
+    border: 1px solid #E2E3E5;
 }
-
 .slider{
     position: relative;
     overflow: hidden;
-    height: 500px;
+    height: 450px;
 }
 .sliderItem{
     float: left;
@@ -19,18 +18,18 @@
     clear: both;
     display: table;
 }
-.slider img{
-    width: 100%;
-}
 
 /* Slides */
 .iconeSlide{
     width: 20px !important;
     margin-right: 10px;
 }
-.carousel1 h3{
+.carousel1 h4, .carousel2 h4,.carousel3 h4, .carousel4 h4{
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px 0;
+}
+.carousel4 div:nth-child(1){
+    flex-direction: column;
 }
 
 /* Button next and previous */
@@ -38,7 +37,7 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: white;
+    background-color: #E2E3E5;
     background-size: 20px;
     border-radius: 50%;
     top:50%;
@@ -93,11 +92,11 @@
 .carouselCommand{
     position: absolute;
     bottom: 0;
-    left: 40%;
+    left: 0;
     text-align: center
 }
 .fa-play-circle, .fa-stop-circle{
-    font-size: larger;
+    font-size: x-large;
     transition: transform 0.3s;
 }
 .fa-play-circle{
@@ -105,4 +104,47 @@
 }
 .fa-play-circle:hover, .fa-stop-circle:hover{
     color: blue;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 300px) {
+    .slider{
+        height: 400px;
+    }
+    .carousel1 p, .carousel2 p, .carousel3 p, .carousel4 p{
+    font-size: 10px;
+    }
+    .carousel1 h4, .carousel2 h4, .carousel3 h4, .carousel4 h4{
+        font-size: 12px;
+    }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .carousel1 p, .carousel2 p, .carousel3 p, .carousel4 p{
+        font-size: 12px;
+        }
+    .carousel1 h4, .carousel2 h4, .carousel3 h4, .carousel4 h4{
+        font-size: 12px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .carousel1 p, .carousel2 p, .carousel3 p, .carousel4 p{
+        font-size: 14px;
+        }
+    .carousel1 h4, .carousel2 h4, .carousel3 h4, .carousel4 h4{
+        font-size: 16px;
+    }
+    .slider{
+        height: 450px;
+    }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .carousel1 p, .carousel2 p, .carousel3 p, .carousel4 p{
+        font-size: 16px;
+        }
+    .carousel1 h4, .carousel2 h4, .carousel3 h4, .carousel4 h4{
+        font-size: 20px;
+    }
 }

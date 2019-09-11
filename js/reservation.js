@@ -39,7 +39,7 @@ function enregistrerReservation() {
     $(".carte").css("width","100%");
     maCarte.scrollWheelZoom.disable(); 
     finMinuteur();
-    $(".dureeMinSec").html("02:00");
+    $(".dureeMinSec").html("20:00");
     minuteur();
     confirmationStationElt.text(nomStationElt[0].textContent);
     afficherMessageConfirmation();

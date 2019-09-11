@@ -56,7 +56,19 @@ function initMap(ville) {
             maCarte.scrollWheelZoom.disable(); 
         });
     });
+
+	maCarte.addControl( new L.Control.Search({
+		url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}',
+		jsonpParam: 'json_callback',
+		propertyName: 'display_name',
+		propertyLoc: ['lat','lon'],
+		marker: false,
+		autoCollapse: true,
+		autoType: false,
+	}) );
+
 }
+
 // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 window.onload = function(){
     initMap("nantes"); 

@@ -32,10 +32,10 @@
     <link rel="stylesheet" href="./leaflet-search-master/src/leaflet-search.mobile.css">
     <!-- Fichiers CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/video.css">
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/carte.css">
+    <link rel="stylesheet" href="./css/leaflet-search.css">
     <link rel="stylesheet" href="./css/reservation.css">
     <link rel="stylesheet" href="./css/contact.css">
     <title>Location de vélos à Nantes</title>
@@ -94,16 +94,18 @@
             </div>
         </header>
         <section id="titre" class="row">
-            <h1>Location de vélos à Nantes</h1>
-            <img src="./img/nantes-velo.jpg" class="img-fluid" alt="Responsive image">
-            <p>Avec notre large choix de vélos tout confort, découvrez Nantes autrement.</p>
+            <h1 class="mx-auto">Location de vélos à Nantes</h1>
+            <img src="./img/nantes-velo.jpg" class="img-fluid" alt="Logo de la société vélo nature">
+            <h2>Avec notre large choix de vélos tout confort, découvrez Nantes autrement.</h2>
         </section>
         <section id="presentation" class="row">
-            <h3 class="row h3">Déterminons ensemble votre besoin !</h3>
-            <p class="row text-justify">Vous souhaitez vous balader une heure dans Nantes ou bien partir plusieurs jours sur
+            <h3 class="row">Déterminons ensemble votre besoin !</h3>
+            <p class="row text-justify">Nous sommes une équipe passionnée de cyclisme sous toutes ses formes.<br>
+                Notre priorité et votre confort, quel que soit votre niveau. 
+                Vous souhaitez vous balader une heure dans Nantes ou bien partir plusieurs jours sur
                 les bords de Loire à la découverte des châteaux ?<br />
-                Nous déterminerons ensemble le vélo adapté à votre parcours et à votre niveau.</p><br />
-            <p class="row">Voici un rapide aperçu de nos vélos :</p>
+                Nous déterminerons ensemble le vélo adapté à votre parcours et à votre condition physique.</p><br />
+            <p class="row">Découvrez nos cycles adaptés à chacun :</p>
             <div class="col-lg-12 accordion" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
@@ -199,8 +201,8 @@
                 </div>
             </div>
         </section>
-        <section id="videoSection" class="row">
-            <h3 class="h3">Les attraits de Nantes à vélo</h3>
+        <section id="sectionVideo" class="row">
+            <h3 class="row">Les attraits de Nantes à vélo</h3>
             <p>Nantes est le point de départ idéal pour des randonnées à vélo le temps d’une journée.
                 En solo ou en famille, en cœur de ville ou pour des escapades alentours :
                 Nantes recèle 1001 atouts pour une balade à vélo.
@@ -216,36 +218,58 @@
             <video class="row" controls autoplay loop preload="auto" src="./img/loire.mp4" alt="Vidéo de présentation des chemins à vélos autour de la Loire."></video>
         </section>
         <section id="sectionCarousel" class="row">
-            <h3 class="row h3">Réserver un vélo en ligne</h3>
+            <h3 class="row">Réserver un vélo en ligne</h3>
             <div class="row" id="carousel">
                 <div class="row carousel1">
-                    <div class="col-md-6">
-                        <img src="./img/slider_1.png" alt="1ère diapositive présentant la réservation d'un vélo">
+                    <div class="col-4 col-sm-4 col-md-6 d-flex align-items-center">
+                        <img class="imgSlide" src="./img/slider_1.png" alt="première diapositive présentant la carte de réservation d'un vélo">
                     </div>
-                    <div class="col-md-5">
-                        <h3>1 - Choisir votre station</h3>
-                        <p><img class="iconeSlide" src="./img/iconBicycleGreen.png"><span class="badge badge-success"> Vert</span> : vélos disponibles</p><br>
-                        <p><img class="iconeSlide" src="./img/iconBicycleOrange.png"><span class="badge badge-warning"> Orange</span> : vélos disponibles mais quantité limitée (moins de 50%)</p><br>
-                        <p><img class="iconeSlide" src="./img/iconBicycleRed.png"><span class="badge badge-danger"> Rouge</span> : station fermée</p>
+                    <div class="col-8 col-sm-8 col-md-6">
+                        <h4>1 - Choisir votre station</h4>
+                        <p><img class="iconeSlide" src="./img/iconBicycleGreen.png" alt="icone vélo vert"><span class="badge badge-success"> Vert</span> : vélos disponibles</p>
+                        <p><img class="iconeSlide" src="./img/iconBicycleOrange.png" alt="icone vélo orange"><span class="badge badge-warning"> Orange</span> : vélos disponibles mais quantité limitée (moins de 50%)</p>
+                        <p><img class="iconeSlide" src="./img/iconBicycleRed.png" alt="icone vélo rouge"><span class="badge badge-danger"> Rouge</span> : station fermée</p>
                         <p class="shadow-sm p-3 mb-5 bg-white rounded">Astuce : cliquer dans la carte pour activer le zoom à la molette (et inversement)</p>
                     </div>
-                    
-
                 </div>
-                <div class="carousel2">
-                    <img src="./img/slider_2.png"
-                        alt="2dn diapositive expliquant la sélection d'un site de location sur la carte">
+                <div class="row carousel2">
+                    <div class="col-8 col-sm-8 col-md-6">
+                        <h4>2 - Vérifier les informations de la station </h4>
+                        <p class="alert alert-success">Si la station est ouverte, vous disposez d'un bouton pour réserver.</p>
+                        <p class="alert alert-danger">Si la station est fermée ou qu'il n'y a plus de vélos disponibles, vous ne pouvez pas réserver.</p>
+                        <p class="shadow-sm p-3 mb-5 bg-white rounded">Astuce : cliquer dans la carte pour faire disparaitre le formulaire d'information.</p>
+                        </div>
+                    <div class="col-4 col-sm-4 col-md-6 d-flex align-items-center">
+                        <img class="imgSlide" src="./img/slider_2.png" alt="deuxième diapositive expliquant la sélection d'un site de location sur la carte">
+                    </div>
                 </div>
-                <div class="carousel3">
-                    <img src="./img/slider_3.png"
-                        alt="3ième diapositive expliquant les champs à remplir pour confirmer une réservation">
+                <div class="row carousel3">
+                        <div class="col-3 col-sm-3 col-md-4 d-flex align-items-center">
+                            <img class="imgSlide" src="./img/slider_3.png" alt="troisième diapositive expliquant les champs à remplir pour confirmer une réservation">
+                        </div>
+                        <div class="col-2 col-sm-2 col-md-2 d-flex align-items-center">
+                            <img src="./img/reserved.png" alt="icone de réservation">
+                        </div>
+                        <div class="col-7 col-sm-7 col-md-6">
+                            <h4>3 - Saisir votre nom, prénom et signer</h4>
+                            <p class="alert alert-success">Si les trois champs sont remplis, votre réservation est effectuée !</p>
+                            <p class="alert alert-danger">Si un champ n'est pas complété, un message vous indiquera de le remplir.</p>
+                            <p class="shadow-sm p-3 mb-5 bg-white rounded">Astuce : vos informations sont conservées si vous souhaitez changer de station.</p>
+                        </div>
+                    </div>
+                <div class="row carousel4">
+                    <div class="col-8 col-sm-8 col-md-6">
+                            <h4>4 - Confirmation de réservation</h4>
+                        <p>Un message vous confirme votre réservation</p>
+                        <p>Votre réservation est valable pour une durée de 20 minutes</p>
+                        <img class="imgSlide" src="./img/slider_4.png" alt="quatrième diapositive confirmant une réservation">
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-6 d-flex align-items-center">
+                        <img class="imgSlide" src="./img/ready-to-go.jpg" alt="Image d'un homme prêt à partir à vélo">
+                    </div>
                 </div>
-                <div class="carousel4">
-                    <img src="./img/slider_4.png" alt="4ième diapositive expliquant la confirmation de réservation">
-                </div>
-            </div>
         </section>
-        <section id="carteEtInformations" class="row">
+        <section id="carteEtInformations">
             <p>Cliquer dans la carte pour activer / désactiver le zoom avec la molette de votre souris</p>
             <div id="carte"></div>
             <aside class="infoStation">
@@ -292,14 +316,14 @@
             <p>Votre vélo a été réservé à la Station :
                 <span class="confirmationStation"></span><br />
                 Pour une durée de :
-                <span class="dureeMinSec">02:00</span></p>
+                <span class="dureeMinSec">20:00</span></p>
             <button type="button" class="annulerReservation btn btn-outline-danger">Annuler</button>
         </div>
         <section class="row" id="contact">
             <h3 class="row">Nous contacter</h3>
             <div class="row">
-                <div class="col-lg-6">
-                    <img src="./img/homme-velo.gif" class="img-fluid" alt="Responsive image">
+                <div class="col-12 col-md-6 d-flex flex-column align-items-center">
+                    <img src="./img/homme-velo.gif" alt="image animée d'un homme faisant du vélo">
                     <address>
                         V'lo nantes<br />
                         17, rue d'Angleterre<br />
@@ -309,31 +333,41 @@
                     </address>
                     <p>Promis, nous répondons dans les 48 heures !</p>
                 </div>
-                <form class="col-lg-6">
-                    <p>Formualire de contact</p>
+                <form class="col-12 col-md-6">
+                    <p>Formulaire de contact</p>
                     <div class="row form-group">
-                        <div class="col">
+                        <div class="col-12 col-md-6">
                             <label for="Prénom">Prénom</label>
                             <input type="text" class="form-control" id="prenom" placeholder="Prénom">
                         </div>
-                        <div class="col">
+                        <div class="col-12 col-md-6">
                             <label for="nom">Nom</label>
                             <input type="text" class="form-control" id="nom" placeholder="Nom">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="col-12 form-group">
                         <label for="exampleInputEmail1">Votre adresse mail</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="Votre email">
                         <small id="emailHelp" class="form-text text-muted">Votre email ne sera jamais utilisé à des fins
                             commerciales.</small>
                     </div>
-                    <div class="form-group">
+                    <div class="col-12 form-group">
                         <label for="commentaire">Votre message</label>
                         <textarea class="form-control" rows="5" id="commentaire" placeholder="Commentaire"></textarea>
                     </div>
                     <button type="submit" class="float-right btn btn-primary">Envoyer</button>
                 </form>
+                <footer class="row bg-light">
+                    <img src="./img/footer_logo.png" alt="Logo de Vélo nature Nantes">
+                    <p class="col-sm-6 text-left align-bottom">Location de vélos à Nantes</p>
+                    <div class="col-sm-6">
+                        <p class="text-right">Site fictif créé dans le cadre d'un projet d'étude<br>
+                            Parcours "Développeur web junior"
+                        <a href="https://openclassrooms.com/fr/paths/48-developpeur-web-junior"> OpenClassRooms</a><br>
+                        Création Rudy STEFFLER</p>
+                    </div>
+                </footer>
             </div>
 
         </section>
@@ -343,6 +377,8 @@
         <script src="./js/scrolling.js"></script>
         <script src="./js/ajax.js"></script>
         <script src="./js/carte.js"></script>
+        <script src="./js/leaflet-search.js"></script>
+        <script src="./js/leaflet-search-geocoder.js"></script>
         <script src="./js/information.js"></script>
         <script src="./js/minuteur.js"></script>
         <script src="./js/reservation.js"></script>

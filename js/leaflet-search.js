@@ -1,28 +1,10 @@
-/* 
- * Leaflet Control Search v2.9.7 - 2019-01-14 
- * 
- * Copyright 2019 Stefano Cudini 
- * stefano.cudini@gmail.com 
- * http://labs.easyblog.it/ 
- * 
- * Licensed under the MIT license. 
- * 
- * Demo: 
- * http://labs.easyblog.it/maps/leaflet-search/ 
- * 
- * Source: 
- * git@github.com:stefanocudini/leaflet-search.git 
- * 
- */
 /*
 	Name					Data passed			   Description
-
 	Managed Events:
 	 search:locationfound	{latlng, title, layer} fired after moved and show markerLocation
 	 search:expanded		{}					   fired after control was expanded
 	 search:collapsed		{}					   fired after control was collapsed
  	 search:cancel			{}					   fired after cancel button clicked
-
 	Public methods:
 	 setLayer()				L.LayerGroup()         set layer search at runtime
 	 showAlert()            'Text message'         show alert message
@@ -1028,5 +1010,3 @@ L.control.search = function (options) {
 return L.Control.Search;
 
 });
-
-

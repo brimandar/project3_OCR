@@ -2,6 +2,14 @@
     font-family: 'bukhari';
     src: url('../font/Bukhari.ttf');
 }
+/* Header */
+.fab {
+    font-size: 1.5em;
+}
+.fa-twitter{
+    margin-right: 15px;
+}
+
 .row{
     margin-left:0!important;
     margin-right: 0!important;
@@ -15,48 +23,91 @@ body{
 }
 
 h1{
-    text-align: center;
     margin-bottom: 30px;
+}
+h3{
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+h3::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 4px;
+    border-bottom: 4px double #007bff;
+}
+img, video{
+    max-width: 100%;
 }
 #titre{
     position: relative;
 }
-#titre p{
+#titre h2{
     position: absolute;
     right: 5%;
     width: 35%;
 
 }
-
 header, section{
 margin-bottom: 2vw;
 }
 
+/* Footer */
+footer{
+    position: relative;
+    margin-top: 30px;
+    height: 100px;
+    width: 100%;
+    align-items: end;
+}
+footer img{
+    position: absolute;
+    top: 0;
+    left: 1%;
+    height: 60%;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 300px) {
-    #titre p{
+    #titre h2{
         font-size: 12px;
         bottom: 0;
+    }
+    footer p{
+        font-size: 10px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    #titre p{
+    #titre h2{
         font-size: 14px;
         bottom: 0;
+    }
+    footer p{
+        font-size: 10px;
     }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    #titre p{
+    #titre h2{
         font-size: 20px;
         bottom: 10%;
+    }
+    footer p{
+        font-size: 12px;
     }
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    #titre p{
+    #titre h2{
         font-size: 25px;
         bottom: 10%;
+    }
+    footer p{
+        font-size: 12px;
     }
 }

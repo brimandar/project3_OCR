@@ -3,15 +3,7 @@
     overflow: hidden;
     font-family: 'Montserrat', sans-serif;
 }
-#sectionVideo div{
-    position : absolute;
-    color: #fff;
-    text-align: center;
-    font-size: 1.5em;
-    top: 200px;
-    left:0;
-    width: 100%;
-}
+
 
 #sectionVideo h2{
     font-family: 'bukhari', Georgia, "Times New Roman", Times, serif;
@@ -29,6 +21,13 @@ font-size: 30px;
     #sectionVideo h2{
         font-size: 1rem;
     }
+    #sectionVideo div{
+        position : relative;
+        color: black;
+        text-align: center;
+        font-size: 1em;
+        width: 100%;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -38,6 +37,15 @@ font-size: 30px;
     }
     #sectionVideo h2{
         font-size: 1.5rem;
+    }
+    #sectionVideo div{
+        position : absolute;
+        color: #fff;
+        text-align: center;
+        font-size: 1.5em;
+        top: 200px;
+        left:0;
+        width: 100%;
     }
 }
 

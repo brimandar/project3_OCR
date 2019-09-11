@@ -1,6 +1,5 @@
 #carte{
     position: relative;
-    height: 500px;
     width: 100%;
     z-index: 1;
 }
@@ -82,4 +81,23 @@ text-shadow:0px 1px 0px #04eacf;
 .monBouton:active {
 	position:relative;
 	top:1px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 300px) {
+    #carte{
+        height: 400px;
+    }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #carte{
+        height: 500px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #carte{
+        height: 600px;
+    }
 }
