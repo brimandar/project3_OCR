@@ -1,4 +1,4 @@
-#contact{
+#contact {
     position: relative;
 }
 
@@ -9,9 +9,14 @@
     font-weight: bold;
 }
 
-#contact > div > div:first-child p {
-    font-weight: bold;
+#contact>div>div:first-child p {
+    font-weight: normal;
     text-align: end;
+    font-size: 0.75em;
+}
+
+#contact button {
+    margin-right: 15px;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -19,10 +24,19 @@
     #contact address {
         left: 22%;
     }
+
+    #contact>div>div:first-child p {
+        font-weight: normal;
+    }
 }
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     #contact address {
         left: 25%;
+    }
+
+    #contact>div>div:first-child p {
+        font-weight: bold;
     }
 }

@@ -5,7 +5,6 @@
     align-items: center;
     background-color: white;
     top : 0;
-    height: 100%;
     border: 1px solid gray;
     z-index: 5;
 }
@@ -60,17 +59,12 @@
     color: white;
 }
 .confirmationReservation{
-    display: flex;
-    flex-direction: column;
     opacity: 0;
     height: 1px;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin: 15px 0;
-}
-#resetCanvas{
-
 }
 
 /* Small devices (landscape phones, 576px and up) */

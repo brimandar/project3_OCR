@@ -1,103 +1,107 @@
-#carte{
+#carte {
     position: relative;
     width: 100%;
     z-index: 1;
 }
 
-#carteEtInformations{
+#carteEtInformations {
     display: flex;
     position: relative;
 }
 
-#carteEtInformations > p{
+#carteEtInformations>p {
     position: absolute;
-    bottom:-2%;
+    bottom: -2%;
     left: 0;
-    background-color: rgb(255, 255, 255,0.8);
+    background-color: rgb(255, 255, 255, 0.8);
     font-size: x-small;
     z-index: 3;
 }
 
-aside{
+aside {
     padding: 1em;
 }
 
-aside h2{
+aside h2 {
     text-align: center;
 }
 
-table{
+table {
     border-collapse: collapse;
     width: 100%;
 }
 
-.celluleDonneesTable{
+.celluleDonneesTable {
     text-align: center;
 }
 
-.infoStation{
-    display:none;
+.infoStation {
+    display: none;
     border: 1px #eaeaea solid;
     box-shadow: 5px 5px 10px 0 #eaeaea;
 }
 
-.statutDeLaStation{
-    color:white;
-    font-weight:bold;
+.statutDeLaStation {
+    color: white;
+    font-weight: bold;
 }
 
-td{
+td {
     padding: 10px;
 }
 
-tr:nth-of-type(odd){
+tr:nth-of-type(odd) {
     background-color: #DCDCDC;
 }
 
-tr{
+tr {
     margin-left: 10px;
 }
 
-.boutonReserver{
-display: flex;
-justify-content: center;
-margin: 2em;
+.boutonReserver {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
 }
 
-.monBouton{
-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
-background-color:#00bdaa;
-border-radius:6px;
-color:#ffffff;
-font-size:15px;
-font-weight:bold;
-padding:6px 24px;
-text-decoration:none;
-text-shadow:0px 1px 0px #04eacf;
+.monBouton {
+    box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+    background-color: #00bdaa;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #04eacf;
 }
+
 .monBouton:hover {
-	background-color:#137566;
+    background-color: #137566;
 }
+
 .monBouton:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 300px) {
-    #carte{
+    #carte {
         height: 400px;
     }
 }
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    #carte{
+    #carte {
         height: 500px;
     }
 }
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    #carte{
+    #carte {
         height: 600px;
     }
 }

@@ -2,36 +2,56 @@
     font-family: 'bukhari';
     src: url('../font/Bukhari.ttf');
 }
+
+
+/* Bug Safari et boostrap v4 */
+.row:before, .row:after {width:0px; height:0px;}
+#titre img{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: inline-block;
+}
 /* Header */
+.iconeVelo {
+    width: 45px;
+    height: 30px;
+}
+
 .fab {
     font-size: 1.5em;
 }
-.fa-twitter{
+
+.fa-twitter {
     margin-right: 15px;
 }
 
-.row{
-    margin-left:0!important;
-    margin-right: 0!important;
+/* General */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
+
 .selector-for-some-widget {
     box-sizing: content-box;
-  }
+}
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
 }
 
-h1{
+h1 {
     margin-bottom: 30px;
 }
-h3{
+
+h3 {
     position: relative;
     width: 100%;
     justify-content: center;
     margin-bottom: 30px;
 }
-h3::after{
+
+h3::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -40,74 +60,149 @@ h3::after{
     height: 4px;
     border-bottom: 4px double #007bff;
 }
-img, video{
+
+img,
+video {
     max-width: 100%;
 }
-#titre{
+
+#titre {
     position: relative;
 }
-#titre h2{
+
+#titre h2 {
     position: absolute;
     right: 5%;
     width: 35%;
 
 }
-header, section{
-margin-bottom: 2vw;
+
+header,
+section {
+    margin-bottom: 30px;
 }
 
 /* Footer */
-footer{
-    position: relative;
+footer {
     margin-top: 30px;
     height: 100px;
     width: 100%;
-    align-items: end;
+    align-items: flex-end;
 }
-footer img{
-    position: absolute;
-    top: 0;
-    left: 1%;
-    height: 60%;
+
+footer img {
+    height: 80px;
+    width: auto;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 300px) {
-    #titre h2{
-        font-size: 12px;
+
+    p,
+    td {
+        font-size: 0.75em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .iconeVelo {
+        width: 30px;
+        height: 20px;
+    }
+
+    nav a {
+        font-size: 14px !important;
+    }
+
+    #titre h2 {
+        font-size: 10px;
         bottom: 0;
     }
-    footer p{
+
+    footer p {
         font-size: 10px;
     }
 }
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    #titre h2{
+
+    p,
+    td {
+        font-size: 0.75em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    .iconeVelo {
+        width: 45px;
+        height: 30px;
+    }
+
+    nav a {
+        font-size: 1.1rem !important;
+    }
+
+    #titre h2 {
         font-size: 14px;
         bottom: 0;
     }
-    footer p{
+
+    footer p {
         font-size: 10px;
     }
 }
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    #titre h2{
+
+    p,
+    td {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.75em;
+    }
+
+    #titre h2 {
         font-size: 20px;
         bottom: 10%;
     }
-    footer p{
+
+    footer p {
         font-size: 12px;
     }
 }
+
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    #titre h2{
+    h2 {
+        font-size: 2em;
+    }
+
+    #titre h2 {
         font-size: 25px;
         bottom: 10%;
     }
-    footer p{
+
+    footer p {
         font-size: 12px;
     }
 }

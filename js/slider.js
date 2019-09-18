@@ -154,12 +154,12 @@ class slider {
     observerTimer() {
         const target = document.querySelector('#carousel');
         var intersectionObserver = new IntersectionObserver(entries => {
-            // Si l'élément est hors du viewport, annulation setinterval
-            console.log(entries[0].intersectionRatio)
-            if (entries[0].intersectionRatio <= 1) {
-                clearInterval(this.playCarousel);;
-            } //Sinon, 
-            this.playCarousel = setInterval(() => this.next(), 5000);
+            // Si l'élément est dans le viewport, lancement setinterval
+            if (entries[0].intersectionRatio <= 0) {
+                clearInterval(this.playCarousel);
+            } else {
+                this.playCarousel = setInterval(() => this.next(), 5000);
+            }
         });
         intersectionObserver.observe(target);
     }

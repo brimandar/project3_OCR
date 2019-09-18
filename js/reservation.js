@@ -12,7 +12,7 @@ boutonReservationElt.on("click", event => {
     maCarte.dragging.disable(); //désactivation du déplacement de la carte par la souris
     maCarte.scrollWheelZoom.disable();
     $(".bloquerCarte").css("z-index", 2);
-    boutonReservationElt.css("display", "none"); 
+    boutonReservationElt.css("display", "none");
 
 })
 $(".cmdFermerReservation").on("click", event => {
@@ -22,22 +22,22 @@ $(".cmdFermerReservation").on("click", event => {
 function fermerFormulaireReservation() {
     reservationElt.css("display", "none");
     reservationElt.css("position", "none");
-    infoStationElt.css("display","none");
-    $(".carte").css("width","100%");
+    infoStationElt.css("display", "none");
+    $(".carte").css("width", "100%");
     maCarte.scrollWheelZoom.disable();
     carteElt.css("opacity", 1);
     informationElt.css("opacity", 1);
     maCarte.dragging.enable();
     boutonReservationElt.css("display", "block");
-    maCarte.scrollWheelZoom.enable(); 
+    maCarte.scrollWheelZoom.enable();
 }
 
 function enregistrerReservation() {
     ajoutLocalStorage();
     fermerFormulaireReservation();
-    infoStationElt.css("display","none");
-    $(".carte").css("width","100%");
-    maCarte.scrollWheelZoom.disable(); 
+    infoStationElt.css("display", "none");
+    $(".carte").css("width", "100%");
+    maCarte.scrollWheelZoom.disable();
     finMinuteur();
     $(".dureeMinSec").html("20:00");
     minuteur();
@@ -47,17 +47,17 @@ function enregistrerReservation() {
 
 function afficherMessageConfirmation() {
     $(".confirmationReservation").animate({
-        height: "100px",
+        height: "150px",
         opacity: "1"
     });
 }
 
-function supprReservation(){
+function supprReservation() {
     finMinuteur();
     dureeMinSecElt.html("00:00");
     sessionStorage.clear();
-    ctx.clearRect(0,0,canvas.width,canvas.height);//cf canvas.js
-    lastX = 0//cf canvas.js
+    ctx.clearRect(0, 0, canvas.width, canvas.height); //cf canvas.js
+    lastX = 0 //cf canvas.js
 }
 
 $(".formReservation").submit(function (e) {
@@ -98,5 +98,5 @@ $(".annulerReservation").on('click', event => {
         opacity: "0"
     });
     supprReservation();
-    
+
 });
